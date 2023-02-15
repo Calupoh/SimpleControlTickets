@@ -1,5 +1,5 @@
 # SimpleControlTickets
-Control de Tickes simple, escrito en python y flak, usando sqlite como base de datos
+Control de Tickets simple, escrito en python y flask, usando sqlite como base de datos
 
 ## Parametros
 
