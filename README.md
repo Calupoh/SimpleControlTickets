@@ -1,4 +1,4 @@
-# SimpleControlTickes
+# SimpleControlTickets
 Control de Tickes simple, escrito en python y flak, usando sqlite como base de datos
 
 ## Parametros
