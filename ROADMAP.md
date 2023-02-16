@@ -1,0 +1,5 @@
+ - [ ] Configurar el sistema de usuarios
+ - [ ] Plantilla "Base.html"
+ - [ ] Sistema de alta y de edición de grupos y clientes
+ - [ ] Pagina "plantilla"
+ - [ ] Pagina "index"
