@@ -3,12 +3,12 @@ from flask import (
     Blueprint, flash, g, redirect, render_template, request, session, url_for
 )
 from werkzeug.security import check_password_hash, generate_password_hash
-from flaskr.gestor_db import get_db, close_db
+from sct.gestor_db import get_db, close_db
 
 bp = Blueprint('user', __name__, url_prefix='/user')
 
 
-@bp.route('/registrar', method=('GET', 'POST'))
+@bp.route('/registrar', methods=('GET', 'POST'))
 def registrar():
     if request.method == 'post':
         clave = request.form['clave']
@@ -49,7 +49,7 @@ def registrar():
     return render_template('user/registrar.html')
 
 
-@bp.route('/login', method=('GET', 'POST'))
+@bp.route('/login', methods=('GET', 'POST'))
 def login():
     if request.method == 'POST':
         username = request.form['username']
@@ -75,7 +75,7 @@ def login():
     return render_template('user/login.html')
 
 
-@bp.route('/change_password', method=('GET', 'POST'))
+@bp.route('/change_password', methods=('GET', 'POST'))
 def change_password():
     if request.method =='POST':
         pass
