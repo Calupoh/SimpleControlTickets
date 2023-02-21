@@ -1,0 +1,22 @@
+body{
+    font-family: sans-serif;
+    background-color: rgb(13, 8, 24);
+    color: #ffffff;
+    display: flex;
+}
+.user-block{
+    background-color: rgb(22, 13, 46);
+    border: 2.5px solid rgb(94, 87, 116);
+    border-radius: 5px;
+    margin: 12% auto;
+    padding: 12px 20px;
+}
+.user-block form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.user-block label, .user-block input{
+    margin: 4px 0px;
+    text-align: center;
+}
