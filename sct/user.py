@@ -10,7 +10,7 @@ bp = Blueprint('user', __name__, url_prefix='/user')
 
 @bp.route('/registrar', methods=('GET', 'POST'))
 def registrar():
-    if request.method == 'post':
+    if request.method == 'POST':
         clave = request.form['clave']
         username = request.form['username']
         password = request.form['password']
@@ -19,14 +19,8 @@ def registrar():
             'SELECT * INTO invitacion WHERE clave = ? ', clave
         ).fetchone()
         error = None
-
-        if not clave:
-            error = 'Se requiere clave de registro.'
-        elif not username:
-            error = 'Se requiere nombre de usuario.'
-        elif not password:
-            error = 'Se requiere contraseña.'
-        elif ver_clave is None:
+        
+        if ver_clave is None:
             error = 'Clave no valida'
         else:
             try:
@@ -34,14 +28,12 @@ def registrar():
                     'INSERT INTO user (username, password) VALUES (?, ?)',
                     (username, generate_password_hash(password)),
                 )
-                db.commit()
             except db.IntegrityError:
                 error = f'Usuario {username} ya esta registrado.'
             else:
                 db.execute(
                     'DELETE FROM invitacion WHERE clave = ?', calve
                 )
-                db.commit()
                 return redirect(url_for('user.login'))
         
         flash(error)
@@ -79,6 +71,7 @@ def login():
 def change_password():
     if request.method =='POST':
         pass
+    return redirect(url_for('user.login'))
 
 
 @bp.before_app_request

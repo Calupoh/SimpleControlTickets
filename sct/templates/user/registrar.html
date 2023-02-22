@@ -7,7 +7,8 @@
         <label for="Username">Username</label>
         <input name="Username" id="username" required/>
         <label for="Password">Contraseña</label>
-        <input type="password" name="Password" id="Password" required/>
+        <input type="password" name="Password" id="password" required/>
         <input type="submit" value="Crear">
     </form>
+    <a href="{{ url_for('user.login') }}">Ya tengo cuenta</a>
 {% endblock %}

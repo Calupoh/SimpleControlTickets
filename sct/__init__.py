@@ -24,5 +24,7 @@ def create_app(add_config=None):
     from . import user
     app.register_blueprint(user.bp)
 
+    from . import gestor_db
+    gestor_db.init_app(app)
 
     return app
